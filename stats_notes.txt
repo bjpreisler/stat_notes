@@ -1,0 +1,71 @@
+#def greatest(p):
+#	big = 0
+#	for i in p:
+#	if i > big:
+#			big = i
+#	return big
+
+# def total_enrollment(p):
+	total_enrollment = 0
+	total_tuition = 0
+	for name, students, price in p:
+		total_students = total_students + students
+#-P is a list with 3 elements
+#-note the triple assignment in the for loop!
+
+#Statistic Notes:
+"""
+STDEV: ()
+z score: how many standard deviations (omega) an average is from the mean (sample mean / omega (stand dev of population)
+
+standard error (se) = omega/sqrt(n)      (omega is standard dev, n = number of sample)
+
+Confidence Intervals = Always 1.96 standarddev away from mean for 95%
+	To calculate =     mean of sample + (or minus) 1.96(standard error)
+
+	
+-T Tests:
+	2 Tails results are more conservative and we're less likely to reject the not null hypoth
+	One T test also called directional test because you pick which way the score is being tested, against which tail
+	t = xbar - mu /  (s/sqrt(n))
+	s = se/sqrt(n)
+	Small sample size (If n<30, then t-test is more suitable )
+	Unknown population standard deviation? (Can not we use z-test when population variance is unknown)
+	
+	
+For dealing with differences and t tests:
+Xd = X2-X1
+SDd = SQRT(sd1^2 + sd2^2)....taking the stdev NORMALLY of the difference seems to be the correct way!
+Tcritd = Xd - 0  /  SDd/(sqrt(n))
+
+SUPPORT: http://support.minitab.com/en-us/minitab/17/topic-library/basic-statistics-and-graphs/hypothesis-tests/basics/null-and-alternative-hypotheses/
+
+SE of difference: SQRT((sd1^2/n1) + (sd2^2/n2))
+
+margin of error: tcrit * SEM 
+
+cohen's d: (xbar - mu) / standdev   = in order to create a standardized mean difference
+
+r2 = t2/(t2 + df)
+
+SEM (standard error of the mean) =  standarddev /  sqrt(n)    =   the standdev of the mean of samples
+
+Pooled Variances
+Sp2 = SS1 + SS2 / df1 + df2
+SE with pooled var = sqrt(sp2/n1 + sp2/n2)
+tstat = XbarDifference / SE of diff
+
+UNDERSTANDING:
+-Standard Deviation vs Stardard Error
+	It helps to first understand a sampling distribution:  it's the distribution of all possible sample means of the same size.  IE:  from a given population
+		you take all possible sample combinations for a fixed sample size and then plot all the averages.
+	width of the sampling distribution = refers to the standard error (is also the same as the SD of the sampling distribution, but that's too confusing to say!)
+	Therefore the SE refers to the sampling distribtution and the SD refers to the population (or sample) distribution 
+
+-When analyzing samples, use xbar instead of mu for the average!
+
+coding notes:
+shift + right click gets you to 'open command line from here'
+	Useful for using Windows 7 libraries
+to run python nb from command line: jupyter notebook nameofnotebook.ipynb
+
